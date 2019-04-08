@@ -119,10 +119,10 @@ host-1-b.sh:
 
 ```
 
--Line 4: installation of curl. 
--Line 6: link port eth1 to the switch
--Line 7: assignment the ip address at the port.
--Line 8: assignment of a static route for all the packets that fall into 192.168.136.0/21. 
+ - Line 4: installation of curl. 
+ - Line 6: link port eth1 to the switch
+ - Line 7: assignment the ip address at the port.
+ - Line 8: assignment of a static route for all the packets that fall into 192.168.136.0/21. 
 In the case of host-1-a all this packets have as destination the ip adress of eth1.1 (router 1), In the case of host-1-b all this packets have as destination the ip adress of eth1.2 (router 1).
 
 # switch.sh
