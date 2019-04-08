@@ -73,7 +73,7 @@ We have assigned ip addresses in this way (When possible the first available ip 
 	router-2                  eth1:   192.168.140.2/30	    eth2: 192.168.139.2/30
 	host-1-a                  eth1:   192.168.137.1/24 	
 	host-1-b                  eth1:   192.168.138.1/27	
-	host-2-c 				  eth1:   192.168.140.1/30	
+	host-2-c                  eth1:   192.168.140.1/30	
 
 ```
 
