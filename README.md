@@ -69,7 +69,7 @@ After the installation of vitualbox and vagrant we clone the repository to the f
 First of all we thought about the network configuration and how to choose ip addresses.
 We have assigned ip addresses in this way (When possible the first available ip adress is used to the host and the last for the router)
 ```
-	router-1                  eth1.1: 192.168.137.254/24	eth1.2: 192.168.138.30/27	eth2: 192.168.139.1/30
+	router-1                  eth1.1: 192.168.137.254/24    eth1.2: 192.168.138.30/27	eth2: 192.168.139.1/30
 	router-2                  eth1:   192.168.140.2/30	    eth2: 192.168.139.2/30
 	host-1-a                  eth1:   192.168.137.1/24 	
 	host-1-b                  eth1:   192.168.138.1/27	
@@ -119,10 +119,10 @@ host-1-b.sh:
 
 ```
 
-Line 4: installation of curl. 
-Line 6: link port eth1 to the switch
-Line 7: assignment the ip address at the port.
-Line 8: assignment of a static route for all the packets that fall into 192.168.136.0/21. 
+-Line 4: installation of curl. 
+-Line 6: link port eth1 to the switch
+-Line 7: assignment the ip address at the port.
+-Line 8: assignment of a static route for all the packets that fall into 192.168.136.0/21. 
 In the case of host-1-a all this packets have as destination the ip adress of eth1.1 (router 1), In the case of host-1-b all this packets have as destination the ip adress of eth1.2 (router 1).
 
 # switch.sh
@@ -146,13 +146,13 @@ In the case of host-1-a all this packets have as destination the ip adress of et
  
  ```
  
-Line 4: installation of openvswitch.
-Line 7: addition of a bridge called switch.
-Line 8: addition of a eth1 port.
-Line 9: addition of a eth2 port tagged 1 (VLAN).
-Line 10: addition of a eth3 port tagged 2 (VALN).
-Line 11,12,13: set eth1, eth2 and eth3 up.
-Line 14: set ovs-system up.
+-Line 4: installation of openvswitch.
+-Line 7: addition of a bridge called switch.
+-Line 8: addition of a eth1 port.
+-Line 9: addition of a eth2 port tagged 1 (VLAN).
+-Line 10: addition of a eth3 port tagged 2 (VALN).
+-Line 11,12,13: set eth1, eth2 and eth3 up.
+-Line 14: set ovs-system up.
  
 # router-1.sh
   ```
@@ -184,12 +184,12 @@ Line 14: set ovs-system up.
 
 ```
 
-Line 9: link eth1 port to the switch.
-Line 10,11: creation of two VLANs: eth1 is splitted in eth1.1 and eth1.2. 
-Line 12,13: assignment the ip address at the ports.
-Line 14,15: link eth1.1 and eth1.2 port to the switch.
-Line 16,17: assignment the ip address at the port eth2 and link port to the switch.
-Line 18,19,20,21,22,23,24: dinamic routing. This lines is used to connect router-1 and router-2.
+-Line 9: link eth1 port to the switch.
+-Line 10,11: creation of two VLANs: eth1 is splitted in eth1.1 and eth1.2. 
+-Line 12,13: assignment the ip address at the ports.
+-Line 14,15: link eth1.1 and eth1.2 port to the switch.
+-Line 16,17: assignment the ip address at the port eth2 and link port to the switch.
+-Line 18,19,20,21,22,23,24: dinamic routing. This lines is used to connect router-1 and router-2.
 
 # router-2.sh
 
@@ -251,13 +251,13 @@ The same of router-1 except that in this case we have only two simple ports eth1
 
 ```
   
-Line 8: installation of docker.
-Line 9: link eth1 port to the switch.
-Line 10: assignment the ip address at the port.
-Line 11: assignment of a static route for all the packets that fall into 192.168.136.0/21.
-Line 12: delete all the docker containers.
-Line 14: creation of web server.
-Line 16: simple html code.
+-Line 8: installation of docker.
+-Line 9: link eth1 port to the switch.
+-Line 10: assignment the ip address at the port.
+-Line 11: assignment of a static route for all the packets that fall into 192.168.136.0/21.
+-Line 12: delete all the docker containers.
+-Line 14: creation of web server.
+-Line 16: simple html code.
 
 # TEST THE NETWORK
 Clone the repository: git clone https://github.com/SilviaVec/dncs-lab
