@@ -1,7 +1,7 @@
-#DESIGN OF NETWORKS AND COMMUNICATION SYSTEM ASSIGNMENT(2018-2019)
+# DESIGN OF NETWORKS AND COMMUNICATION SYSTEM ASSIGNMENT(2018-2019)
 Project by Vecchietti Silvia and Emanuele Riccardo Gallo.
 
-#ASSIGMENT
+# ASSIGMENT
 Design a functioning network where any host configured and attached to router-1 (through switch) can browse a website hosted on host-2-c.
 Limitations and specific requirement:
 1. Up to 130 hosts in the same subnet of host-1-a
@@ -62,9 +62,9 @@ The network configuration is:
 VirtualBox is basically inception for computer. You can use VirtualBox to run entire sandboxed operating systems with your own computer.
 Vagrant is a software that is used to manage a development environment. Through the command line, you can, for example, grab any available OS, install it, configure it, run it, work inside of it and shut it down.
  
-#OUR WORK 
+# OUR WORK 
 
-#Ip address
+# Ip address
 After the installation of vitualbox and vagrant we clone the repository to the following website: https://github.com/dustnic/dncs-lab.
 First of all we thought about the network configuration and how to choose ip addresses.
 We have assigned ip addresses in this way (When possible the first available ip adress is used to the host and the last for the router)
@@ -90,7 +90,7 @@ In particoular:
  - In the subnetting with router-1 and router-2 we use only 2 bits for the hosts. We have 2 ip adresses free so we assigned the first to port eth-2 of router-1 and the second to port eth-2 of router-1.
  - In the last subnetting we also have (2^2)-2 = 2 free ip adresses. The first to port eth-1 of router-2 and the second to port eth-1 of host-2-c.
 
-#host-1-a.sh and host-1-b.sh 
+# host-1-a.sh and host-1-b.sh 
  host-1-a.sh: 
 ```
  
@@ -125,7 +125,7 @@ Line 7: assignment the ip address at the port.
 Line 8: assignment of a static route for all the packets that fall into 192.168.136.0/21. 
 In the case of host-1-a all this packets have as destination the ip adress of eth1.1 (router 1), In the case of host-1-b all this packets have as destination the ip adress of eth1.2 (router 1).
 
-#switch.sh
+# switch.sh
 ```
 
 1. export DEBIAN_FRONTEND=noninteractive
@@ -154,7 +154,7 @@ Line 10: addition of a eth3 port tagged 2 (VALN).
 Line 11,12,13: set eth1, eth2 and eth3 up.
 Line 14: set ovs-system up.
  
-#router-1.sh
+# router-1.sh
   ```
   
 1. export DEBIAN_FRONTEND=noninteractive
@@ -191,7 +191,7 @@ Line 14,15: link eth1.1 and eth1.2 port to the switch.
 Line 16,17: assignment the ip address at the port eth2 and link port to the switch.
 Line 18,19,20,21,22,23,24: dinamic routing. This lines is used to connect router-1 and router-2.
 
-#router-2.sh
+# router-2.sh
 
 ```
 
@@ -219,7 +219,7 @@ Line 18,19,20,21,22,23,24: dinamic routing. This lines is used to connect router
 
 The same of router-1 except that in this case we have only two simple ports eth1 and eth2 and we don't split.
 
-#host-2-c.sh
+# host-2-c.sh
 
 ```
 
@@ -259,7 +259,7 @@ Line 12: delete all the docker containers.
 Line 14: creation of web server.
 Line 16: simple html code.
 
-#TEST THE NETWORK
+# TEST THE NETWORK
 Clone the repository: git clone https://github.com/SilviaVec/dncs-lab
 You should be able to launch the lab from within the cloned repo folder.
 ```
@@ -303,7 +303,7 @@ with this command you can have some informations about the ethernet interfaces.
 
 we can also use the commands `ping` and `curl`
 
-#Example with host-1-a
+# Example with host-1-a
 `vagrant ssh host-1-a`:
 ```
 
@@ -403,7 +403,7 @@ This command send a request for "docker.html" on port 8080 of the server running
  
 ```
 
-#Example with host-2-c
+# Example with host-2-c
 `vagrant ssh host-2-c`
 
 ```
